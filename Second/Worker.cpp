@@ -13,47 +13,23 @@ class Worker {
 		virtual void Compute_pay(double hours) = 0;
 		friend ostream& operator << (ostream& out,Worker& worker);
 		Worker() {};
-		virtual void setName(string wname) {
-//			name = wname;
-		}
-		virtual string getName() {
-//			return this->name;
-		} 
+		virtual void setName(string wname) {}
+		virtual string getName() {} 
 		
-		virtual void setAge(int wage) {
-//			age = wage;
-		} 
-		virtual int getAge() {
-//			return this->age;
-		}
+		virtual void setAge(int wage) {} 
+		virtual int getAge() {}
 		
-		virtual void setSex(string wsex) {
-//			sex = wsex;
-		}
-		virtual string getSex() {
-//			return this->sex;
-		} 
+		virtual void setSex(string wsex) {}
+		virtual string getSex() {} 
 		
-		virtual void setType(string wtype) {
-//			type = wtype;
-		}
-		virtual string getType() {
-//			return this->type;
-		} 
+		virtual void setType(string wtype) {}
+		virtual string getType() {} 
 		
-		virtual void setSalaryLevel(int w_salary_level) {
-//			salary_level = w_salary_level;
-		}
-		virtual int getSalaryLevel() {
-//			return this->salary_level;
-		}
+		virtual void setSalaryLevel(int w_salary_level) {}
+		virtual int getSalaryLevel() {}
 		
-		virtual void setPayPerHour(int w_pay_per_hour) {
-//			pay_per_hour = w_pay_per_hour;
-		}
-		virtual int getPayPerHour() {
-//			return this->pay_per_hour;
-		}
+		virtual void setPayPerHour(int w_pay_per_hour) {}
+		virtual int getPayPerHour() {}
 };
 ostream& operator << (ostream& out,Worker& worker) {
 	out << "ÓÃ»§Ãû£º" << worker.getName() << "\n" 
@@ -196,44 +172,35 @@ int main() {
 		cout << "\n";
 	}	
 	HourlyWorker *hworker0;
-	hworker0->setName(nameTemp[0]);
-	hworker0->setAge(ageTemp[0]);
-	hworker0->setSex(sexTemp[0]);
-	hworker0->setType(typeTemp[0]);
-	hworker0->setSalaryLevel(salaryLevelTemp[0]);
 	worker[0] = hworker0;
 	
 	HourlyWorker *hworker1;
-	hworker1->setName(nameTemp[1]);
-	hworker1->setAge(ageTemp[1]);
-	hworker1->setSex(sexTemp[1]);
-	hworker1->setType(typeTemp[1]);
-	hworker1->setSalaryLevel(salaryLevelTemp[1]);
 	worker[1] = hworker1;
 	
 	HourlyWorker *hworker2;
-	hworker2->setName(nameTemp[2]);
-	hworker2->setAge(ageTemp[2]);
-	hworker2->setSex(sexTemp[2]);
-	hworker2->setType(typeTemp[2]);
-	hworker2->setSalaryLevel(salaryLevelTemp[2]);
 	worker[2] = hworker2;
 	
 	SalariedWorker *sworker0;
-	sworker0->setName(nameTemp[3]);
-	sworker0->setAge(ageTemp[3]);
-	sworker0->setSex(sexTemp[3]);
-	sworker0->setType(typeTemp[3]);
-	sworker0->setSalaryLevel(salaryLevelTemp[3]);
 	worker[3] = sworker0;
 	
 	SalariedWorker *sworker1;
-	sworker1->setName(nameTemp[4]);
-	sworker1->setAge(ageTemp[4]);
-	sworker1->setSex(sexTemp[4]);
-	sworker1->setType(typeTemp[4]);
-	sworker1->setSalaryLevel(salaryLevelTemp[4]);
 	worker[4] = sworker1;
+	
+	for(int i=0;i<4;i++) {
+		worker[i]->setName(nameTemp[i]);
+	}
+	for(int i=0;i<4;i++) {
+		worker[i]->setAge(ageTemp[i]);
+	}
+	for(int i=0;i<4;i++) {
+		worker[i]->setSex(sexTemp[i]);
+	}
+	for(int i=0;i<4;i++) {
+		worker[i]->setType(typeTemp[i]);
+	}
+	for(int i=0;i<4;i++) {
+		worker[i]->setSalaryLevel(salaryLevelTemp[i]);
+	}
 	
 	int hoursTemp[5];
 	for(int j=0;j<5;j++) {
